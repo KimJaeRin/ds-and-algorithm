@@ -20,6 +20,8 @@
         - pop - list.pop()
         - push - list.append()와 동일
 
+    ![stack](https://cs.lmu.edu/~ray/images/stack.gif)
+
     -  큐 : First In First Out (FIFO)
 
     ![queue](https://raw.githubusercontent.com/KimJaeRin/ds-and-algorithm/main/images/queue.png)
