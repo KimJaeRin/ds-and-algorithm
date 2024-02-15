@@ -16,8 +16,13 @@
 - 파이썬 자료구조
     - 단순 연결 리스트 다시
     - 원형 연결 리스트
-    - 스택
-    -  큐
+    - 스택 : Last In First Out(LIFO)
+        - pop - list.pop()
+        - push - list.append()와 동일
+
+    -  큐 : First In First Out (FIFO)
+
+    ![queue](https://raw.githubusercontent.com/KimJaeRin/ds-and-algorithm/main/images/queue.png)
     - 트리
     - 그래프
 
