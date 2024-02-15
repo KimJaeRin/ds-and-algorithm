@@ -25,10 +25,12 @@
     -  큐 : First In First Out (FIFO)
 
     ![queue](https://raw.githubusercontent.com/KimJaeRin/ds-and-algorithm/main/images/queue.png)
+       
+## 4일차
+- 파이썬 자료구조
+    - 큐 다시
     - 트리
     - 그래프
-
-## 4일차
 
 
 ## 5일차
