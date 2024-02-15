@@ -1,25 +1,19 @@
-# file : ds16_queue.py
-# desc : queue 일반구현
+# file : ds17_circularQueue.py
+# desc : 원형 queue 일반구현 원형 큐에서는 rear|front % SIZE 개념이 확실
 
 # Queue 풀 함수
-def isQueueFull(): #개선버전으로 변경
+def isQueueFull(): 
     global SIZE, queue, front, rear
-    if rear != (SIZE-1): #큐가 아직 빈 상태
-        return False
-    elif rear == (SIZE-1) and front == -1: #큐가 꽉찬 상태
+    if (rear+1) % SIZE == front:
         return True
-    else: #큐가 앞쪽이 비어있는 상태, rear가 끝까지 간 상태
-        while front != -1: #완전히 앞으로 당긴다. front가 -1이 될 때 까지
-            for i in range(front+1, SIZE):
-                queue[i-1] = queue[i] #front에다가 front+1의 값을 할당
-                queue[i] = None
-            front -= 1
-            rear -= 1
+    else:
         return False
+    
+    
     
 # Queue 엠티확인함수
 def isQueueEmpty():
-    global front, rear
+    global SIZE, queue, front, rear
     if front == rear:
         return True
     else:
@@ -27,39 +21,39 @@ def isQueueEmpty():
     
 #Queue 데이터삽입함수
 def enQueue(data):
-    global queue, rear
+    global SIZE, queue, front, rear
     if isQueueFull() == True:
         print('큐가 꽉찼습니다')
         return
     else:
-        rear += 1
+        rear = (rear + 1) % SIZE #원형 큐에서 데이터 입력 공간 확보
         queue[rear] = data
 
 #Queue 데이터 추출함수
 def deQueue():
-    global queue, front
+    global SIZE, queue, front, rear
     if isQueueEmpty() == True:
         print('큐가 비었습니다')
         return
     else:
-        front += 1
+        front = (front+1) % SIZE
         data = queue[front]
         queue[front] = None
         return data
 
 #추출 데이터 확인함수
 def peek():
-    global queue, front
+    global SIZE, queue, front, rear
     if isQueueEmpty() == True:
         print('큐가 비었습니다')
         return None
     else:
-        return queue[front+1]
+        return queue[(front+1) % SIZE] #front + 1에 괄호 쳐야함(사칙연산 우선순위)
 
 # 전역변수
 SIZE = int(input('큐 크기 입력(정수) : ')) #상수(constant)
 queue = [None for _ in range(SIZE)]
-front = rear = -1
+front = rear = 0
 
 if __name__ == '__main__': #메인 시작
     while True:
