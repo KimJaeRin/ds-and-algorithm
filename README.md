@@ -54,6 +54,7 @@
         - 삽입 정렬 Insertion Sort - 기준값 기준 앞뒤로 보내는 정렬 O(n^2)
         - 버블 정렬 Bubble Sort - 기준값 기준으로 제일 긑 값을 뒤로 보내는 정렬 O(n^2)
         - 퀵 정렬   Quick Sort - 기준값 작은값 그룹/큰값그룹을 분리한 뒤 다시 정렬 재귀호출 O(nlogn)
+![sorting](https://raw.githubusercontent.com/KimJaeRin/ds-and-algorithm/main/images/sorting.jpg)
 
 
 ## 7일차
